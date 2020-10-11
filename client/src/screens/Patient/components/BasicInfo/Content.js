@@ -57,7 +57,7 @@ export default function BasicInfoContent(props) {
         <Typography variant="body1" className={classes.text12} color="textPrimary">
           Name:&nbsp;
         </Typography>
-        <Typography variant="body1" className={`${classes.text12} ${classes.value}`} color="textPrimary">
+        <Typography data-title={"ASDASDASDASASDASDASDASASDASDASDASASDASDASDASASDASDASDASASDASDASDASASDASDASDASASDASDASDASASDASDASDASASDASDASDAS"} variant="body1" className={`${classes.text12} ${classes.value}`} color="textPrimary">
           {data.firstname} {data.lastname}
         </Typography>
       </Grid>

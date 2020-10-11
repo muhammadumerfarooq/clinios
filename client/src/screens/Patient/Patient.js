@@ -1179,7 +1179,15 @@ export default function Patient(props) {
         hideActions={true}
         size={"lg"}
       />
-      <Grid className={classes.main}>
+      <div className="main-view">
+      <div className="scroll-canvas">
+      <div className="dashboard-container">
+      <div className="dashboard-scroll">
+        <div className="custom-scrollbar">
+
+      <div className="view">
+      {/* <Grid className={classes.main}> */}
+      <div className="dashboard-content">
       {!hasPatientIderror && (
       <ResponsiveGridLayout
         className={"layout"}
@@ -1199,6 +1207,8 @@ export default function Patient(props) {
         {FirstColumnPatientCards.map((item, index) => {
           return (
             <Grid key={item.title} className={classes.overflowAuto}>
+              <div className="panel-wrapper">
+                <div className="overlay">
               <Card
                 key={index}
                 title={item.title}
@@ -1218,6 +1228,8 @@ export default function Patient(props) {
                 updateLayoutHandler={() => updateCardsLayout()}
                 updateMinHeight={updateMinHeight}
               />
+              </div>
+              </div>
             </Grid>
           );
         })}
@@ -1309,7 +1321,13 @@ export default function Patient(props) {
         </Grid>
       </ResponsiveGridLayout>
       )}
-      </Grid>
+      </div>
+      </div>
+      </div>
+      </div>
+      </div>
+      </div>
+      </div>
     </>
   );
 }
@@ -1322,6 +1340,8 @@ const useStyles = makeStyles((theme) => ({
     display: "none",
   },
   overflowAuto: {
-    overflowY: "auto",
+    // overflowY: "auto",
+    position: 'absolute',
+    touchAction: 'none'
   },
 }));

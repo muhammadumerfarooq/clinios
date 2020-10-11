@@ -35,7 +35,9 @@ const PatientCard = (props) => {
 
   return (
     <>
-      <Card className={classes.root} variant="outlined">
+      <div className={`${classes.root} panel-container`} variant="outlined">
+        <div className="panel-header grid-drag-handle">
+          <div className="panel-title-container">
         <Grid container justify="space-between" alignItems="center" className={`${classes.titleContainer} ${showActions ? classes.leftPadding : classes.fullPadding}`}>
           <Typography className={classes.title}>
             {title} &nbsp; &nbsp;
@@ -103,6 +105,8 @@ const PatientCard = (props) => {
             )
           }
         </Grid>
+        </div>
+        </div>
         <Grid className={classes.cardContent}>
           {
             !!data ?
@@ -111,19 +115,22 @@ const PatientCard = (props) => {
             ""
           }
         </Grid>
-      </Card>
+      </div>
     </>
   )
 }
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    minHeight: 100,
-    overflowY: 'auto',
+    // minHeight: 100,
+    // overflowY: 'auto',
     background: Colors.white,
     border: '1px solid rgba(38, 38, 38, 0.12)',
     borderRadius: 4,
-    marginBottom: 6
+    marginBottom: 6,
+    position: 'absolute',
+    height: '100%',
+    width: '100%'
   },
   titleContainer: {
     borderBottom: `1px solid ${Colors.border}`,

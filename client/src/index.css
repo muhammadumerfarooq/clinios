@@ -27,3 +27,21 @@ code {
 #root {
   height: 100%;
 }
+
+[data-title] {
+	font-size: 18px;
+	position: relative;
+	cursor: help;
+}
+
+[data-title]:hover::before {
+	content: attr(data-title);
+	position: absolute;
+	bottom: -30px;
+	padding: 5px;
+	background: #2979FF;
+	color: #fff;
+	font-size: 12px;
+  white-space: nowrap;
+  z-index: 9999999;
+}
